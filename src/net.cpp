@@ -1209,6 +1209,9 @@ static const char *strMainNetDNSSeed[][2] = {
  
     /* Australia */
     { "australia.seed.tenfivecoin.com", "australia.seed.tenfivecoin.com" },
+
+    /* Chaosagent - US - NA - Very Trustable */
+    { "chaosagent.org", "chaosagent.org" },
     { NULL, NULL }
 };
 

@@ -33,7 +33,12 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xffd9baa28f47c1979af3373b513a1a422dcfb3642236a677e773ceb058b348c6");
+
+// 2014-03-15 19:15:20 block.nTime = 1394907000
+// 2014-03-15 19:15:20 block.nNonce = 7513022
+// 2014-03-15 19:15:20 block.GetHash = 20c492a0808ed7fd623539f1777ee54407b0cecf15697925f03e58fa7730cdcd
+
+uint256 hashGenesisBlock("0x20c492a0808ed7fd623539f1777ee54407b0cecf15697925f03e58fa7730cdcd");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Tenfivecoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -49,7 +54,7 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-int64 nChainStartTime = 1393653601;
+int64 nChainStartTime = 1394906926;
 int64 nPremineAmount = 105000;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
@@ -2899,7 +2904,7 @@ bool LoadBlockIndex()
         pchMessageStart[2] = 'f';
         pchMessageStart[3] = 'v';
 
-        hashGenesisBlock = uint256("0x7643bbbf7f3d83c34fcddf9f6c77ce804582eff8ef95cdef99bed751bd1f09f2");
+        hashGenesisBlock = uint256("0x5ec919dd92e6974266d0e189a456ed46eb5e31c3dda42d03084e85be40ffd6f3");
     }
 
     //
@@ -2926,7 +2931,7 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char *pszTimestamp = "This is Tenfive Coin.  March 1st, 2014.";
+        const char *pszTimestamp = "This is Tenfive Coin.  Launching on March 15th, 2014";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2940,25 +2945,18 @@ bool InitBlockIndex() {
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
         block.nBits = 0x1e0ffff0;
-  
-        /*
-        04:52:43 block.nTime = 1393650000
-        04:52:43 block.nNonce = 5084381
-        04:52:43 block.GetHash = ffd9baa28f47c1979af3373b513a1a422dcfb3642236a677e773ceb058b348c6
-        */
-
-        block.nNonce = 5084381;
-        block.nTime = 1393650000;
+        block.nNonce = 7513022;
+        block.nTime = 1394907000;
         
         if (fTestNet) { 
           /*
-          04:47:33 block.nTime = 1393650001
-          04:47:33 block.nNonce = 6867693
-          04:47:33 block.GetHash = 7643bbbf7f3d83c34fcddf9f6c77ce804582eff8ef95cdef99bed751bd1f09f2
+          2014-03-15 19:35:28 block.nTime = 1394907001
+          2014-03-15 19:35:28 block.nNonce = 11008305
+          2014-03-15 19:35:28 block.GetHash = 5ec919dd92e6974266d0e189a456ed46eb5e31c3dda42d03084e85be40ffd6f3
           */
 
-          block.nNonce = 6867693;
-          block.nTime = 1393650001;
+          block.nNonce = 11008305;
+          block.nTime = 1394907001;
         }
 
         /* Debugging */
@@ -2968,7 +2966,7 @@ bool InitBlockIndex() {
         printf("block.getHash()                         = %s\n", hash.ToString().c_str());
         printf("block.hashMerkleRoot.ToString()         = %s\n", block.hashMerkleRoot.ToString().c_str());
 
-        assert(block.hashMerkleRoot == uint256("0x2c27ead8c9a0c0ff9f31af41056772f42484e0bd4615bbcff8b21800853b0dd3"));
+        assert(block.hashMerkleRoot == uint256("0xfaa6fd2b44bbbfef7de013ecb003cc943ac857fb44c971333be107b599f31a14"));
         
         // If genesis block hash does not match, then generate new genesis hash.
         if (false && block.GetHash() != hashGenesisBlock)
