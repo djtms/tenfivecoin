@@ -11,11 +11,9 @@ What is TenfiveCoin?
 ----------------
 
 TenfiveCoin is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
- - 1 minute block target
- - subsidy halves in 840k blocks (~4 years)
- - 100 000 000 000(one hundred billion) total coins
- - Random block reward
- - Every block to retarget difficulty with Kimotos Gravity Well algorithm
+ - 1.5 minute block target
+ - 10.5 million total coins
+ - Every block after block 1000 to retarget difficulty with Kimotos Gravity Well algorithm
 
 For more information, as well as an immediately useable, binary version of
 the TenfiveCoin client sofware, see http://www.tenfivecoin.com
