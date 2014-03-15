@@ -34,9 +34,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("TNFV");
-    case mBTC: return QString("mTNFV");
-    case uBTC: return QString::fromUtf8("μTNFV");
+    case BTC: return QString("10-5");
+    case mBTC: return QString("m10-5");
+    case uBTC: return QString::fromUtf8("μ10-5");
     default: return QString("???");
     }
 }
@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("TNFVs");
-    case mBTC: return QString("Milli-TNFVs (1 / 1,000)");
-    case uBTC: return QString("Micro-TNFVs (1 / 1,000,000)");
+    case BTC: return QString("10-5s");
+    case mBTC: return QString("Milli-10-5s (1 / 1,000)");
+    case uBTC: return QString("Micro-10-5s (1 / 1,000,000)");
     default: return QString("???");
     }
 }
