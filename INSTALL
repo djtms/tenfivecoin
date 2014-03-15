@@ -1,0 +1,29 @@
+----------------------------------------------------------------------
+Building TenfiveCoin (Qt wallet)
+----------------------------------------------------------------------
+
+See doc/readme-qt.rst for instructions on building TenfiveCoin-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of TenfiveCoin.
+
+See doc/build-*.txt for instructions on building tenfivecoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of TenfiveCoin.
+
+Further build information and documentation is available at
+the official TenfiveCoin website, http://www.tenfivecoin.org
+
+----------------------------------------------------------------------
+How to build TenfiveCoin (Console wallet)
+----------------------------------------------------------------------
+
+Dependencies for Ubuntu/Debian:
+
+ $ sudo apt-get install libboost-all-dev libdb++-dev libminiupnpc-dev 
+ $ make -f makefile.unix
+
+Dependencies for CentOS:
+
+ $ sudo yum install boost-devel boost-thread boost-system
+ $ make -f makefile.rh.unix
+
