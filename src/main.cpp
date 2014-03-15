@@ -2952,9 +2952,9 @@ bool InitBlockIndex() {
         
         if (fTestNet) { 
           /*
-	  4:47:33 block.nTime = 1393650001
-	  4:47:33 block.nNonce = 6867693
-          4:47:33 block.GetHash = 7643bbbf7f3d83c34fcddf9f6c77ce804582eff8ef95cdef99bed751bd1f09f2
+          04:47:33 block.nTime = 1393650001
+          04:47:33 block.nNonce = 6867693
+          04:47:33 block.GetHash = 7643bbbf7f3d83c34fcddf9f6c77ce804582eff8ef95cdef99bed751bd1f09f2
           */
 
           block.nNonce = 6867693;
@@ -2971,7 +2971,7 @@ bool InitBlockIndex() {
         assert(block.hashMerkleRoot == uint256("0x2c27ead8c9a0c0ff9f31af41056772f42484e0bd4615bbcff8b21800853b0dd3"));
         
         // If genesis block hash does not match, then generate new genesis hash.
-        if (true && block.GetHash() != hashGenesisBlock)
+        if (false && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
             // This will figure out a valid hash and Nonce if you're
