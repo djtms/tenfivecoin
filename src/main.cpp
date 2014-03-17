@@ -1114,9 +1114,14 @@ int64 static GetBlockValue(int nHeight, int64 nFees, uint256 prevHash)
 
     if      (nHeight == 1) { nSubsidy = nPremineAmount * COIN; }   /* Premine Allocation */
     else if (nHeight <= 1050) { nSubsidy = 1.57079632 * COIN; } /* 1050 */
-    else if (nHeight > 1050) {
-      nSubsidy = 3.14159265 * COIN; 
-    }
+    else if (nHeight <= 3150) { nSubsidy = 3.14159265 * COIN; } /* 1050 * 3 */
+    else if (nHeight <= 6300) { nSubsidy = 9.8596 * COIN; }        /* 1050 * 6 */
+    else if (nHeight <= 9450) { nSubsidy = 19.7192 * COIN; }       /* 1050 * 9 */
+    else if (nHeight <= 18900) { nSubsidy = 25 * COIN; }           /* 1050 * 18 */
+    else if (nHeight <= 37800) { nSubsidy = 50 * COIN; }           /* 1050 * 36 */
+    else if (nHeight <= 75600) { nSubsidy = 25 * COIN; }           /* 1050 * 72 */
+    else if (nHeight <= 151200) { nSubsidy = 19.7192 * COIN; }      /* 1050 * 144 */
+    else { nSubsidy = 9.8596 * COIN; }
     
     return nSubsidy + nFees;
 }
